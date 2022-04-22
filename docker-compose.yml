@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  pycord:
+    container_name: pycord
+#    image: pycord.slim
+    build: 
+      context: ./pycord_build/.
+      target: audio
+    image: pycord:audio
+    environment:
+      - 'TOKEN=${TOKEN}'
+      - 'PREFIX=${PREFIX}'
+      - 'GUILDS=${GUILDS}'
+#    volumes:
+#      - ./build/run.py:/run.py:ro
